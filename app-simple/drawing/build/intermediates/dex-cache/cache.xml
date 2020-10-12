@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\basis\seed-android\app-simple\drawing\app\build\intermediates\exploded-aar\android_app\jars\classes.jar"
+        jumboMode="false"
+        revision="25.0.3"
+        sha1="7593279d8550134fe349c61169f2390e42a982fd">
+        <dex dex="C:\basis\seed-android\app-simple\drawing\app\build\intermediates\pre-dexed\x86\debug\intermediates-exploded-aar-android_app_83a1d76052040bac2892c52f627f0a282cc200e5.jar" />
+    </item>
+
+</items>

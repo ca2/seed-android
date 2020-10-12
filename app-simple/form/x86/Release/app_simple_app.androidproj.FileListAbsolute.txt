@@ -1,0 +1,3 @@
+C:\basis\seed-android\app-simple\app\x86\Release\app_simple_app.androidprojAssemblyReference.cache
+C:\basis\seed-android\app-simple\app\x86\Release\app.apk.recipe
+C:\basis\seed-android\app-simple\app\x86\Release\app.apk

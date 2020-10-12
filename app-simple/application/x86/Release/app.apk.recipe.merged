@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths>C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libapp_simple_app.so;C:\Microsoft\AndroidNDK64\android-ndk-r16b\prebuilt\android-x86\gdbserver\gdbserver;C:\Microsoft\AndroidNDK64\android-ndk-r16b\sources\cxx-stl\llvm-libc++\libs\x86\libc++_shared.so;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libaura.so;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libdraw2d_cairo.so;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libexperience_core.so;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libfreeimage_imaging.so</SOLibPaths>
+  <AndroidLibPaths>C:\basis\platform-android\app\x86\Release\android_app.aar;C:\basis\platform-android\app\app</AndroidLibPaths>
+  <OObjPaths>C:\basis\time-android\intermediate\x86\basis\app_simple_app;C:\basis\time-android\intermediate\x86\basis\aura;C:\basis\time-android\intermediate\x86\basis\draw2d_cairo;C:\basis\time-android\intermediate\x86\basis\experience_core;C:\basis\time-android\intermediate\x86\basis\freeimage_imaging</OObjPaths>
+  <Configuration>basis</Configuration>
+  <Platform>x86</Platform>
+  <AndroidArchitecture>x86</AndroidArchitecture>
+</project>
