@@ -49,12 +49,12 @@
     <OutDir>$(SolutionDir)..\..\..\stage\$(Platform)\$(Configuration)\$(ProjectName)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x86'">
-    <OutDir>$(SolutionDir)..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|ARM'">
-    <OutDir>$(SolutionDir)..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='basis|ARM'">
     <AntPackage>
@@ -102,11 +102,11 @@
     <Content Include="src\com\ca2\app.java" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\app-core\gcom\nord_gcom.vcxproj" />
-    <ProjectReference Include="..\..\..\app\aura\nord_aura.vcxproj" />
-    <ProjectReference Include="..\..\..\app\draw2d_cairo\nord_draw2d_cairo.vcxproj" />
-    <ProjectReference Include="..\..\..\app\experience_core\nord_experience_core.vcxproj" />
-    <ProjectReference Include="..\..\..\app\freeimage_imaging\nord_freeimage_imaging.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app-core\gcom\nord_gcom.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\aura\nord_aura.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\draw2d_cairo\nord_draw2d_cairo.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\experience_core\nord_experience_core.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\imaging_freeimage\nord_imaging_freeimage.vcxproj" />
     <ProjectReference Include="..\app.activity\app.activity.vcxproj" />
     <ProjectReference Include="..\app.launcher\app.launcher.vcxproj" />
   </ItemGroup>

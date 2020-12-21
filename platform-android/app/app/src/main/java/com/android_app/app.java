@@ -33,8 +33,6 @@ public class app extends Activity
 	
 		super.onCreate(savedInstanceState);
 
-
-
 		Display display = getWindowManager().getDefaultDisplay();
 
 		DisplayMetrics metrics = new DisplayMetrics();
@@ -113,24 +111,6 @@ public class app extends Activity
 		{
 
 			prjname = prjname.substring(8);
-
-		}
-
-		if (!bLoaded) 
-		{
-
-			try 
-			{
-
-				System.loadLibrary(prjname);
-
-				bLoaded = true;
-
-			}
-			catch (UnsatisfiedLinkError e) 
-			{
-
-			}
 
 		}
 

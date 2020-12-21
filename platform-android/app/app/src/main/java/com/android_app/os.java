@@ -57,6 +57,7 @@ class os
 
    boolean m_bEditFocusKill;
 
+   boolean m_bRedraw;
 
 }
 

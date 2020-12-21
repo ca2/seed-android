@@ -274,9 +274,9 @@ class impact extends View
 
 			m_timer = new Timer();
 
-			TimerTask updateBall = new impact_timer(this);
+			TimerTask exchange_timer = new impact_timer(this);
 
-			m_timer.scheduleAtFixedRate(updateBall, 0, 100);
+			m_timer.scheduleAtFixedRate(exchange_timer, 0, 100);
 
 		}
 
@@ -288,6 +288,13 @@ class impact extends View
 
 		native_on_timer();
 
+		if(m_os.m_bRedraw)
+		{
+
+			postInvalidate();
+
+		}
+
 	}
 
 	
@@ -298,8 +305,6 @@ class impact extends View
 		render_impact(m_bitmap, System.currentTimeMillis() - m_lStartTime);
 
 		canvas.drawBitmap(m_bitmap, 0, 0, null);
-
-		invalidate();
 
 		if(m_iPaintStep % 8 == 0)
 		{
@@ -405,6 +410,13 @@ class impact extends View
 		{
 
 			m_os.m_bEditFocusKill = false;
+
+		}
+
+		if(m_os.m_bRedraw)
+		{
+
+			m_os.m_bRedraw = false;
 
 		}
 
