@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-   <string name="app_name">App!!</string>
-   <string name="cmd_line">app.exe : app=app/app client_only</string>
-   <string name="lib_name">draw2d_cairo</string>
-</resources>

@@ -1,117 +1,169 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="basis|ARM">
-      <Configuration>basis</Configuration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="stage|ARM">
-      <Configuration>stage</Configuration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="basis|x86">
-      <Configuration>basis</Configuration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
       <Platform>x86</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="stage|x86">
-      <Configuration>stage</Configuration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
       <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <RootNamespace>nord_app_cidadedecuritiba_alphaclock</RootNamespace>
+    <AndroidBuildType>Gradle</AndroidBuildType>
+    <RootNamespace>app</RootNamespace>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <ProjectVersion>1.0</ProjectVersion>
-    <ProjectGuid>74b146ba-91ab-425b-b6ca-3dddd6276265</ProjectGuid>
+    <ProjectGuid>0a5a3263-879e-436b-b542-9b6941320068</ProjectGuid>
     <_PackagingProjectWithoutNativeComponent>true</_PackagingProjectWithoutNativeComponent>
-    <LaunchActivity Condition="'$(LaunchActivity)' == ''">com.nord_app_cidadedecuritiba_alphaclock.nord_app_cidadedecuritiba_alphaclock</LaunchActivity>
+    <LaunchActivity Condition="'$(LaunchActivity)' == ''">com.app.app</LaunchActivity>
+    <JavaSourceRoots>src\main\java</JavaSourceRoots>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|ARM'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|ARM'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x86'" Label="Configuration">
-    <UseDebugLibraries>true</UseDebugLibraries>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x86'" Label="Configuration">
-    <UseDebugLibraries>false</UseDebugLibraries>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.props" />
+  <ItemDefinitionGroup>
+    <GradlePackage>
+      <ProjectDirectory>$(IntermediateDir)app</ProjectDirectory>
+      <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
+      <ApplicationName>com.app_cidadedecuritiba.alphaclock</ApplicationName>
+    </GradlePackage>
+  </ItemDefinitionGroup>
   <ImportGroup Label="ExtensionSettings" />
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x86'">
-    <OutDir>$(SolutionDir)..\..\..\stage\$(Platform)\$(Configuration)\$(ProjectName)</OutDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|x86'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='basis|ARM'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='basis|ARM'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='basis|x86'">
-    <AntPackage>
-      <AndroidAppLibName />
-    </AntPackage>
-  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
   <ItemGroup>
-    <Content Include="libs\armeabi-v7a\libatomiconv.so" />
-    <Content Include="libs\armeabi-v7a\libaurapcre.so" />
-    <Content Include="libs\armeabi-v7a\libaurasqlite.so" />
-    <Content Include="libs\armeabi-v7a\libaxisbzip2.so" />
-    <Content Include="libs\armeabi-v7a\libaxiscairo.so" />
-    <Content Include="libs\armeabi-v7a\libaxiscrypto.so" />
-    <Content Include="libs\armeabi-v7a\libaxisfreetype.so" />
-    <Content Include="libs\armeabi-v7a\libaxisidn.so" />
-    <Content Include="libs\armeabi-v7a\libaxisjpeg.so" />
-    <Content Include="libs\armeabi-v7a\libaxisopenssl.so" />
-    <Content Include="libs\armeabi-v7a\libaxispixman.so" />
-    <Content Include="libs\armeabi-v7a\libaxispng.so" />
-    <Content Include="libs\x86\libatomiconv.so" />
-    <Content Include="libs\x86\libaurapcre.so" />
-    <Content Include="libs\x86\libaurasqlite.so" />
-    <Content Include="libs\x86\libaxisbzip2.so" />
-    <Content Include="libs\x86\libaxiscairo.so" />
-    <Content Include="libs\x86\libaxiscrypto.so" />
-    <Content Include="libs\x86\libaxisfreetype.so" />
-    <Content Include="libs\x86\libaxisidn.so" />
-    <Content Include="libs\x86\libaxisjpeg.so" />
-    <Content Include="libs\x86\libaxisopenssl.so" />
-    <Content Include="libs\x86\libaxispixman.so" />
-    <Content Include="libs\x86\libaxispng.so" />
-    <Content Include="nord_app_cidadedecuritiba_alphaclock\drawable\icon.png" />
-    <Content Include="nord_app_cidadedecuritiba_alphaclock\values\strings.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <AntBuildXml Include="build.xml" />
-    <AndroidManifest Include="AndroidManifest.xml">
-      <SubType>Designer</SubType>
-    </AndroidManifest>
-    <Content Include="src\com\ca2\app.java" />
+    <GradleTemplate Include="app\build.gradle.template" />
+    <GradleTemplate Include="app\src\main\AndroidManifest.xml.template" />
+    <GradleTemplate Include="build.gradle.template" />
+    <GradleTemplate Include="settings.gradle.template" />
+    <GradleTemplate Include="gradle\wrapper\gradle-wrapper.properties.template" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\src\main\jniLibs\x86\libaurabzip2.so" />
+    <Content Include="app\src\main\jniLibs\x86\libauracairo.so" />
+    <Content Include="app\src\main\jniLibs\x86\libauraexpat.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurafreeimage.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurafreetype.so" />
+    <Content Include="app\src\main\jniLibs\x86\libauraiconv.so" />
+    <Content Include="app\src\main\jniLibs\x86\libauraidn.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurajpeg.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurampg123.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurapcre.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurapixman.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurapng.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurasqlite.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurazlib.so" />
+    <Content Include="app\src\main\res\drawable\icon.png" />
+    <Content Include="app\src\main\res\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\source\app-cidadedecuritiba\alphaclock\nord_cidadedecuritiba_alphaclock.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app-core\flag\nord_core_flag.vcxproj" />
     <ProjectReference Include="..\..\..\..\source\app-core\gcom\nord_gcom.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app-core\hellomultiverse\nord_core_hellomultiverse.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\acme\nord_acme.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\apex\nord_apex.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\aqua\nord_aqua.vcxproj" />
     <ProjectReference Include="..\..\..\..\source\app\aura\nord_aura.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\axis\nord_axis.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\base\nord_base.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\bred\nord_bred.vcxproj" />
+    <ProjectReference Include="..\..\..\..\source\app\core\nord_core.vcxproj" />
     <ProjectReference Include="..\..\..\..\source\app\draw2d_cairo\nord_draw2d_cairo.vcxproj" />
     <ProjectReference Include="..\..\..\..\source\app\experience_core\nord_experience_core.vcxproj" />
     <ProjectReference Include="..\..\..\..\source\app\imaging_freeimage\nord_imaging_freeimage.vcxproj" />
-    <ProjectReference Include="..\app.activity\app.activity.vcxproj" />
-    <ProjectReference Include="..\app.launcher\app.launcher.vcxproj" />
+    <ProjectReference Include="..\..\platform-android\app\android_app.androidproj" />
   </ItemGroup>
   <ItemGroup>
-    <AntProjectPropertiesFile Include="project.properties" />
+    <JavaCompile Include="app\src\main\java\com\app_cidadedecuritiba\alphaclock.java" />
   </ItemGroup>
   <Import Project="$(AndroidTargetsPath)\Android.targets" />
   <ImportGroup Label="ExtensionTargets" />

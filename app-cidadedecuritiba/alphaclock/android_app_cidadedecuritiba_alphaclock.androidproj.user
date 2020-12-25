@@ -4,4 +4,8 @@
     <LaunchActivity>com.ca2.app</LaunchActivity>
     <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <LaunchActivity>com.app_cidadedecuritiba.alphaclock</LaunchActivity>
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>
