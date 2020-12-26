@@ -37,6 +37,5 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
-    <DebuggerType>JavaOnly</DebuggerType>
   </PropertyGroup>
 </Project>

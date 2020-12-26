@@ -80,9 +80,8 @@
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ItemDefinitionGroup>
     <GradlePackage>
-      <ProjectDirectory>$(IntermediateDir)app</ProjectDirectory>
       <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
-      <ApplicationName>com.app_simple.app</ApplicationName>
+      <ApplicationName>com.app.app</ApplicationName>
     </GradlePackage>
   </ItemDefinitionGroup>
   <ImportGroup Label="ExtensionSettings" />
@@ -127,7 +126,7 @@
     <GradleTemplate Include="gradle\wrapper\gradle-wrapper.properties.template" />
   </ItemGroup>
   <ItemGroup>
-    <JavaCompile Include="app\src\main\java\com\app_simple\app.java" />
+    <JavaCompile Include="app\src\main\java\com\app\app.java" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\src\main\jniLibs\x86\libaurabzip2.so" />

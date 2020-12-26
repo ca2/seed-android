@@ -133,9 +133,11 @@
     <Content Include="app\src\main\jniLibs\x86\libaurabzip2.so" />
     <Content Include="app\src\main\jniLibs\x86\libauracairo.so" />
     <Content Include="app\src\main\jniLibs\x86\libauraexpat.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurafreeimage.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurafreetype.so" />
     <Content Include="app\src\main\jniLibs\x86\libauraiconv.so" />
     <Content Include="app\src\main\jniLibs\x86\libauraidn.so" />
+    <Content Include="app\src\main\jniLibs\x86\libaurajpeg.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurampg123.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurapcre.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurapixman.so" />
