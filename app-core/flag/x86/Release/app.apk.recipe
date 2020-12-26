@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths />
+  <AndroidLibPaths />
+  <OObjPaths />
+  <Configuration />
+  <Platform />
+  <AndroidArchitecture>x86</AndroidArchitecture>
+  <!--links to other recipe files-->
+  <RecipeFiles>C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libapp_simple_app.so.recipe;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libaura.so.recipe;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libdraw2d_cairo.so.recipe;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libexperience_core.so.recipe;C:\basis\platform-android\_seed\..\..\time-android\x86\basis\libimaging_freeimage.so.recipe;C:\basis\platform-android\app\x86\Release\android_app.aar.recipe</RecipeFiles>
+</project>
