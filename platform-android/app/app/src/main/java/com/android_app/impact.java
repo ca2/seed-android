@@ -199,9 +199,13 @@ class impact extends View
 
 	private static native void aura_size_changed();
 
-	private static native boolean aura_on_text_composition(String str, int newCursorPosition);
+	private static native boolean InputConnectionSetComposingText(String text, int newCursorPosition);
 
-	private static native boolean aura_on_text_commit(String str, int newCursorPosition);
+	private static native boolean InputConnectionSetComposingRegion(int start, int end);
+
+	private static native boolean InputConnectionFinishComposingText();
+
+	//private static native boolean aura_on_text_commit(String str, int newCursorPosition);
 
 	public Timer m_timer;
 
@@ -436,6 +440,12 @@ class impact extends View
 		m_inputconnection = new impact_input_connection(this, true);
 
 		outAttrs.inputType = InputType.TYPE_CLASS_TEXT;
+
+		outAttrs.initialSelStart = m_os.m_iEditorSelectionStart;
+
+		outAttrs.initialSelEnd = m_os.m_iEditorSelectionEnd;
+
+		outAttrs.setSurroundingText(m_os.m_strEditorText);
 
 		return m_inputconnection;
 

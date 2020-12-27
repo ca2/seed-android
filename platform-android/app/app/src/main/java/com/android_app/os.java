@@ -61,6 +61,16 @@ class os
 
    boolean m_bRedraw;
 
+   boolean m_bEditorSelection;
+
+   int m_iEditorSelectionStart;
+
+   int m_iEditorSelectionEnd;
+
+   boolean m_bEditorText;
+
+   String m_strEditorText;
+
 }
 
 
