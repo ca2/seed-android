@@ -39,9 +39,9 @@
     <RootNamespace>app_simple</RootNamespace>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <ProjectVersion>1.0</ProjectVersion>
-    <ProjectGuid>5aecc00e-3633-43ee-b432-e43dd3f21b79</ProjectGuid>
+    <ProjectGuid>fb3ac07e-9ebc-43ea-aead-f9773d154bfc</ProjectGuid>
     <_PackagingProjectWithoutNativeComponent>true</_PackagingProjectWithoutNativeComponent>
-    <LaunchActivity Condition="'$(LaunchActivity)' == ''">com.app_simple.drawing</LaunchActivity>
+    <LaunchActivity Condition="'$(LaunchActivity)' == ''">com.app_simple.app</LaunchActivity>
     <JavaSourceRoots>src\main\java</JavaSourceRoots>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.Default.props" />
@@ -80,7 +80,6 @@
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ItemDefinitionGroup>
     <GradlePackage>
-      <ProjectDirectory>$(ProjectDir)app</ProjectDirectory>
       <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
       <ApplicationName>com.app_simple.drawing</ApplicationName>
     </GradlePackage>
@@ -127,18 +126,16 @@
     <GradleTemplate Include="gradle\wrapper\gradle-wrapper.properties.template" />
   </ItemGroup>
   <ItemGroup>
-    <JavaCompile Include="app\src\main\java\com\app_simple\drawing.java" />
+    <JavaCompile Include="app\src\main\java\com\app\app.java" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\src\main\jniLibs\x86\libaurabzip2.so" />
     <Content Include="app\src\main\jniLibs\x86\libauracairo.so" />
-    <Content Include="app\src\main\jniLibs\x86\libauraexpat.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurafreeimage.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurafreetype.so" />
     <Content Include="app\src\main\jniLibs\x86\libauraiconv.so" />
     <Content Include="app\src\main\jniLibs\x86\libauraidn.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurajpeg.so" />
-    <Content Include="app\src\main\jniLibs\x86\libaurampg123.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurapcre.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurapixman.so" />
     <Content Include="app\src\main\jniLibs\x86\libaurapng.so" />

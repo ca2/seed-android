@@ -31,6 +31,5 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
     <LaunchActivity>com.app_core.hellomultiverse</LaunchActivity>
-    <DebuggerType>JavaOnly</DebuggerType>
   </PropertyGroup>
 </Project>

@@ -80,7 +80,6 @@
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ItemDefinitionGroup>
     <GradlePackage>
-      <ProjectDirectory>$(IntermediateDir)app</ProjectDirectory>
       <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
       <ApplicationName>com.app_cidadedecuritiba.alphaclock</ApplicationName>
     </GradlePackage>
@@ -164,6 +163,10 @@
   </ItemGroup>
   <ItemGroup>
     <JavaCompile Include="app\src\main\java\com\app_cidadedecuritiba\alphaclock.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\src\main\java\com\app_cidadedecuritiba\" />
+    <Folder Include="app\src\main\res\drawable\" />
   </ItemGroup>
   <Import Project="$(AndroidTargetsPath)\Android.targets" />
   <ImportGroup Label="ExtensionTargets" />

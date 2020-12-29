@@ -80,9 +80,8 @@
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ItemDefinitionGroup>
     <GradlePackage>
-      <ProjectDirectory>$(IntermediateDir)app</ProjectDirectory>
       <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
-      <ApplicationName>com.app_core.flag</ApplicationName>
+      <ApplicationName>com.app_core.clockverse</ApplicationName>
     </GradlePackage>
   </ItemDefinitionGroup>
   <ImportGroup Label="ExtensionSettings" />
@@ -164,6 +163,11 @@
   </ItemGroup>
   <ItemGroup>
     <JavaCompile Include="app\src\main\java\com\app_core\clockverse.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\src\main\java\com\app_core\" />
+    <Folder Include="app\src\main\jniLibs\x86\" />
+    <Folder Include="app\src\main\res\drawable\" />
   </ItemGroup>
   <Import Project="$(AndroidTargetsPath)\Android.targets" />
   <ImportGroup Label="ExtensionTargets" />

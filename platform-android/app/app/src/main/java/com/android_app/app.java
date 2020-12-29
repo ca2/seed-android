@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Display;
 import android.util.DisplayMetrics;
-import android.graphics.Point;
 import android.content.pm.PackageManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -55,8 +54,6 @@ public class app extends Activity
 
 		String strApplicationIdentifier = "";
 
-		//String strLibraries = "";
-
 		String strCommandLineParameters = "";
 
 		try 
@@ -71,8 +68,6 @@ public class app extends Activity
 			strApplicationIdentifier = bundle.getString("application_identifier");
 
 			strCommandLineParameters = bundle.getString("command_line_parameters");
-
-//			strLibraries = bundle.getString("library_name");
 
 		}
 		catch (NameNotFoundException e) 

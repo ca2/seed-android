@@ -80,7 +80,6 @@
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ItemDefinitionGroup>
     <GradlePackage>
-      <ProjectDirectory>$(IntermediateDir)app</ProjectDirectory>
       <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
       <ApplicationName>com.app_simple.form</ApplicationName>
     </GradlePackage>

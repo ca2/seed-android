@@ -3,13 +3,13 @@ package com.android_app;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.lang.Runnable;
 import android.app.AlertDialog;
 import android.os.Build;
 import android.text.Selection;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.View;
-import android.widget.EditText;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.text.Editable;
@@ -18,21 +18,26 @@ import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.KeyEvent;
 import android.view.inputmethod.BaseInputConnection;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TextView.BufferType;
 import android.text.InputType;
-import android.view.inputmethod.EditorInfo;
 import android.graphics.Point;
 import android.net.Uri;
 import android.content.Intent;
 import android.util.Log;
 
 
+
 class impact extends View
 {
 
 
-	class impact_timer extends TimerTask 
+
+	class impact_timer implements Runnable
 	{
    
 		impact m_impact;
@@ -44,6 +49,7 @@ class impact extends View
 	
 		}
 
+		  @Override
 		public void run() 
 		{
       
@@ -75,6 +81,21 @@ class impact extends View
 
 		}
 
+		public SpannableStringBuilder set(String str) 
+		{
+
+			int iLocalStart = 0;
+
+			int iLocalLengthy = length();
+
+			int iStringsStart = 0;
+
+			int iStringLen = str.length();
+
+			return replace(iLocalStart, iLocalLengthy, str, iStringsStart, iStringLen);
+
+		}
+
 	}
 
 
@@ -84,17 +105,65 @@ class impact extends View
 		public impact_editable m_editable;
 
 		public impact m_impact;
+
+		int m_iBatch;
+
+		public os m_os;
 		
+
 		public impact_input_connection(impact impact, boolean bFullEditor) 
 		{
 
 			super(impact, bFullEditor);
 
+			m_iBatch = 0;
+
 			m_impact = impact;
 
 			m_editable = impact.m_editable;
 
+			m_os = impact.m_os;
+
 		}
+
+
+		public boolean isBatchEdit()
+		{
+		
+			return m_iBatch > 0;
+
+		}
+
+
+		@Override
+		public boolean beginBatchEdit() 
+		{
+
+			boolean b = super.beginBatchEdit();
+
+			m_iBatch++;
+
+			m_impact.InputConnectionBeginBatchEdit();
+
+			return b;
+
+		}
+
+
+		@Override
+		public boolean endBatchEdit() 
+		{
+
+			boolean b = super.endBatchEdit();
+
+			m_impact.InputConnectionEndBatchEdit();
+
+			m_iBatch--;
+
+			return b;
+
+		}
+
 
 		@Override
 		public Editable getEditable() 
@@ -104,7 +173,73 @@ class impact extends View
 
 		}
 
-		
+
+		@Override
+		public CharSequence getTextBeforeCursor(int n, int flags) 
+		{
+
+			if(m_os.m_strEditorText == null)
+			{
+
+				return "";
+
+			}
+
+			int iStart = Math.min(m_os.m_iEditorSelectionStart, m_os.m_iEditorSelectionEnd);
+
+			String string = m_os.m_strEditorText.substring(Math.max(0, iStart - n), iStart);
+
+			return string;
+
+		}
+
+
+		@Override
+		public CharSequence getTextAfterCursor(int n, int flags) 
+		{
+
+			if(m_os.m_strEditorText == null)
+			{
+
+				return "";
+
+			}
+
+			int iEnd = Math.max(m_os.m_iEditorSelectionStart, m_os.m_iEditorSelectionEnd);
+
+			String string = m_os.m_strEditorText.substring(iEnd, Math.min(iEnd + n, m_os.m_strEditorText.length()));
+
+			return string;
+
+		}
+
+
+		@Override
+		public CharSequence getSelectedText(int flags) 
+		{
+
+			if(m_os.m_strEditorText == null)
+			{
+
+				return "";
+
+			}
+
+			int iStart = Math.min(m_os.m_iEditorSelectionStart, m_os.m_iEditorSelectionEnd);
+
+			int iEnd = Math.max(m_os.m_iEditorSelectionStart, m_os.m_iEditorSelectionEnd);
+
+			iStart = Math.max(iStart, 0);
+
+			iEnd = Math.min(iEnd, m_os.m_strEditorText.length());
+
+			String string = m_os.m_strEditorText.substring(iStart, iEnd);
+
+			return string;
+
+		}
+
+
 		@Override
 		public boolean deleteSurroundingText(int beforeLength, int afterLength) 
 		{
@@ -124,29 +259,63 @@ class impact extends View
 
 			String str = text.toString();
 
-			m_impact.aura_on_text_composition(str, newCursorPosition);
+			m_impact.InputConnectionSetComposingText(str, newCursorPosition);
 
 			return b;
 
 		}
 
-		// just adding this to show that text is being committed.
+
 		@Override
-		public boolean commitText(CharSequence text, int newCursorPosition) 
+		public boolean commitText(CharSequence text, int newCursorPosition)
 		{
-      
-			boolean returnValue = super.commitText(text, newCursorPosition);
-			
-			Log.i("TAG", "text: " + m_editable);
+
+			boolean b = super.commitText(text, newCursorPosition);
 
 			String str = text.toString();
 
-			m_impact.aura_on_text_commit(str, newCursorPosition);
+			m_impact.InputConnectionCommitText(str, newCursorPosition);
 
-			InputMethodManager manager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+			return b;
 
-			//manager.updateSelection();
+		}
+
+
+		@Override
+		public boolean setComposingRegion(int start, int end)
+		{
+
+			boolean b = super.setComposingRegion(start, end);
+
+			m_impact.InputConnectionSetComposingRegion(start, end);
+
+			return b;
+
+		}
+
+		
+		@Override
+		public boolean setSelection(int start, int end)
+		{
+
+			boolean b = super.setSelection(start, end);
+
+			m_impact.InputConnectionSetSelection(start, end);
+
+			return b;
+
+		}
+
+
+		// just adding this to show that text is being committed.
+		@Override
+		public boolean finishComposingText() 
+		{
+      
+			boolean returnValue = super.finishComposingText();
 			
+			m_impact.InputConnectionFinishComposingText();
+
 			return returnValue;
 
 		}
@@ -157,15 +326,21 @@ class impact extends View
 
    public app m_app;
 
+	private boolean m_bAskedToShowSoftInput;
+
    private Bitmap m_bitmap;
 
    private long m_lStartTime;
 
-	private int m_iPaintStep;
+	private int m_iStep;
 
 	private int m_iWidth;
 
 	private int m_iHeight;
+
+	private boolean m_bShowKeyboardAfterwards2;
+
+	private boolean m_bFocus;
 
 	impact_input_connection m_inputconnection;
 
@@ -199,18 +374,25 @@ class impact extends View
 
 	private static native void aura_size_changed();
 
+	private static native boolean InputConnectionBeginBatchEdit();
+
+	private static native boolean InputConnectionEndBatchEdit();
+
+	private static native boolean InputConnectionCommitText(String text, int newCursorPosition);
+
 	private static native boolean InputConnectionSetComposingText(String text, int newCursorPosition);
 
 	private static native boolean InputConnectionSetComposingRegion(int start, int end);
+
+	private static native boolean InputConnectionSetSelection(int start, int end);
 
 	private static native boolean InputConnectionFinishComposingText();
 
 	//private static native boolean aura_on_text_commit(String str, int newCursorPosition);
 
-	public Timer m_timer;
+	public task_scheduler m_scheduler;
 
 	
-
    public impact(app app) 
    {
 
@@ -279,14 +461,14 @@ class impact extends View
 
 		m_app.update_mem_free_available();
 
-		if(m_timer == null)
+		if(m_scheduler == null)
 		{
 
-			m_timer = new Timer();
+			m_scheduler = new task_scheduler();
 
-			TimerTask exchange_timer = new impact_timer(this);
+			Runnable exchange_timer = new impact_timer(this);
 
-			m_timer.scheduleAtFixedRate(exchange_timer, 0, 100);
+			m_scheduler.scheduleAtFixedRate(exchange_timer, 100);
 
 		}
 
@@ -298,6 +480,8 @@ class impact extends View
 
 		native_on_timer();
 
+		step();
+
 		if(m_os.m_bRedraw)
 		{
 
@@ -307,23 +491,66 @@ class impact extends View
 
 	}
 
-	
-   @Override
-	protected void onDraw(Canvas canvas) 
+
+	void step()
 	{
 
-		render_impact(m_bitmap, System.currentTimeMillis() - m_lStartTime);
+		m_iStep++;
 
-		canvas.drawBitmap(m_bitmap, 0, 0, null);
-
-		if(m_iPaintStep % 8 == 0)
+		if (m_os.m_bHideKeyboard) 
 		{
-		
-			m_app.update_mem_free_available();
+	  
+			m_os.m_bHideKeyboard = false;
+
+			Log.d("com.android_app.impact", "onDraw Start Hiding Soft Keyboard");
+
+			onReceivedHideKeyboard();
+
+			if(m_bAskedToShowSoftInput)
+			{
+
+				m_bAskedToShowSoftInput = false;
+			
+				InputMethodManager manager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+				///manager.hideSoftInputFromWindow (getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
+
+				manager.hideSoftInputFromWindow (getWindowToken(), 0);
+
+			}
+
+			clearFocus();
+
+			//setEnabled(false);
+
+			//setFocusable(false);
+
+			Log.d("com.android_app.impact", "m_os.m_bHideKeyboard");
 
 		}
 
-		m_iPaintStep++;
+		if(m_os.m_bEditFocusSet)
+		{
+
+			m_os.m_bEditFocusSet = false;
+
+			if(m_os.m_bShowKeyboard)
+			{
+
+				m_os.m_bShowKeyboard = false;
+
+				m_bShowKeyboardAfterwards2 = true;
+
+			}
+
+			InputMethodManager manager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+			manager.restartInput(this);
+
+			requestFocus();
+
+		}
+
 
 		if (m_os.m_bShowKeyboard) 
 		{
@@ -342,34 +569,19 @@ class impact extends View
 
 			requestFocus();
 
-			InputMethodManager manager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+				if(!m_bAskedToShowSoftInput)
+				{
 
-			manager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT);
-
-		}
-
-		if (m_os.m_bHideKeyboard) 
-		{
-	  
-			m_os.m_bHideKeyboard = false;
-
-			Log.d("com.android_app.impact", "onDraw Start Hiding Soft Keyboard");
-
-			onReceivedHideKeyboard();
+						  	 m_bAskedToShowSoftInput = true;
 
 			InputMethodManager manager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
 
-			manager.hideSoftInputFromWindow (getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
+			//manager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT);
+				manager.showSoftInput(this, InputMethodManager.SHOW_FORCED);
 
-			clearFocus();
+				
 
-			setEnabled(false);
-
-			setFocusable(false);
-
-			//setFocusableInTouchMode(false);
-
-			Log.d("com.android_app.impact", "m_os.m_bHideKeyboard");
+				}
 
 		}
 
@@ -389,28 +601,36 @@ class impact extends View
 
 		}
 
-		if(m_os.m_bEditFocusSet)
+		if(m_os.m_bEditorTextUpdated)
 		{
 
-			m_os.m_bEditFocusSet = false;
+			m_os.m_bEditorTextUpdated = false;
 
-			m_editable.replace(0, m_editable.length(), m_os.m_strEditFocusText);
+			m_editable.set(m_os.m_strEditorText);
 
-			if(m_os.m_iEditFocusSelBeg >= 0)
+		}
+
+		if(m_inputconnection != null)
+		{
+
+			if(!m_inputconnection.isBatchEdit())
 			{
 
-				int iSelBeg = m_os.m_iEditFocusSelBeg;
-
-				int iSelEnd = m_os.m_iEditFocusSelEnd;
-
-				if(iSelEnd < 0)
+				if(m_os.m_bInputMethodManagerUpdateSelection)
 				{
 
-					iSelEnd = m_editable.length() + iSelEnd + 1;
+					m_os.m_bInputMethodManagerUpdateSelection = false;
+
+					InputMethodManager manager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+					manager.updateSelection(
+							this,
+							m_os.m_iInputMethodManagerSelectionStart,
+							m_os.m_iInputMethodManagerSelectionEnd,
+							m_os.m_iInputMethodManagerCandidateStart,
+							m_os.m_iInputMethodManagerCandidateEnd);
 
 				}
-
-				m_inputconnection.setSelection(iSelBeg, iSelEnd);
 
 			}
 
@@ -422,6 +642,24 @@ class impact extends View
 			m_os.m_bEditFocusKill = false;
 
 		}
+
+		if(m_iStep % 8 == 0)
+		{
+		
+			m_app.update_mem_free_available();
+
+		}
+
+	}
+
+	
+   @Override
+	protected void onDraw(Canvas canvas) 
+	{
+
+		render_impact(m_bitmap, System.currentTimeMillis() - m_lStartTime);
+
+		canvas.drawBitmap(m_bitmap, 0, 0, null);
 
 		if(m_os.m_bRedraw)
 		{
@@ -445,7 +683,31 @@ class impact extends View
 
 		outAttrs.initialSelEnd = m_os.m_iEditorSelectionEnd;
 
-		outAttrs.setSurroundingText(m_os.m_strEditorText);
+		String strEditor;
+
+		if(m_os.m_strEditorText != null)
+		{
+
+			strEditor = m_os.m_strEditorText;
+
+		}
+		else
+		{
+
+			strEditor = "";
+
+		}
+
+		m_editable.set(strEditor);
+
+		  if(m_bShowKeyboardAfterwards2)
+		  {
+
+				  m_bShowKeyboardAfterwards2 = false;
+
+			m_os.m_bShowKeyboard = true;
+
+		  }
 
 		return m_inputconnection;
 

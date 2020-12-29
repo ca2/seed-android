@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths />
+  <AndroidLibPaths />
+  <OObjPaths />
+  <Configuration />
+  <Platform />
+  <AndroidArchitecture>x86</AndroidArchitecture>
+  <!--links to other recipe files-->
+  <RecipeFiles>C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libgcom.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libapp_core_hellomultiverse.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libacme.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libapex.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libaqua.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libaura.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libaxis.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libbase.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libbred.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libcore.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libdraw2d_cairo.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libexperience_core.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\libimaging_freeimage.so.recipe;C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\android_app\android_app.aar.recipe</RecipeFiles>
+</project>

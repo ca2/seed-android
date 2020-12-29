@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths>C:\basis\time-android\x86\Debug\libapp_simple_drawing.so;C:\Microsoft\AndroidNDK64\android-ndk-r16b\prebuilt\android-x86\gdbserver\gdbserver;C:\Microsoft\AndroidNDK64\android-ndk-r16b\sources\cxx-stl\llvm-libc++\libs\x86\libc++_shared.so;C:\basis\time-android\x86\Debug\libacme.so;C:\basis\time-android\x86\Debug\libapex.so;C:\basis\time-android\x86\Debug\libaqua.so;C:\basis\time-android\x86\Debug\libaura.so;C:\basis\time-android\x86\Debug\libaxis.so;C:\basis\time-android\x86\Debug\libbase.so;C:\basis\time-android\x86\Debug\libdraw2d_cairo.so;C:\basis\time-android\x86\Debug\libexperience_core.so;C:\basis\time-android\x86\Debug\libimaging_freeimage.so</SOLibPaths>
+  <AndroidLibPaths>C:\basis\archive\platform-android\_seed\..\..\..\time-android\x86\Debug\android_app\android_app.aar;C:\basis\archive\seed-android\platform-android\app\app\</AndroidLibPaths>
+  <OObjPaths>C:\basis\time-android\intermediate\x86\Debug\app_simple_drawing;C:\basis\time-android\intermediate\x86\Debug\acme;C:\basis\time-android\intermediate\x86\Debug\apex;C:\basis\time-android\intermediate\x86\Debug\aqua;C:\basis\time-android\intermediate\x86\Debug\aura;C:\basis\time-android\intermediate\x86\Debug\axis;C:\basis\time-android\intermediate\x86\Debug\base;C:\basis\time-android\intermediate\x86\Debug\draw2d_cairo;C:\basis\time-android\intermediate\x86\Debug\experience_core;C:\basis\time-android\intermediate\x86\Debug\imaging_freeimage</OObjPaths>
+  <Configuration>Debug</Configuration>
+  <Platform>x86</Platform>
+  <AndroidArchitecture>x86</AndroidArchitecture>
+</project>

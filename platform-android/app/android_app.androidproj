@@ -5,32 +5,32 @@
       <Configuration>Debug</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="stage|ARM">
-      <Configuration>stage</Configuration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
       <Platform>ARM</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|ARM64">
       <Configuration>Debug</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="stage|ARM64">
-      <Configuration>stage</Configuration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x86">
       <Configuration>Debug</Configuration>
       <Platform>x86</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="stage|x86">
-      <Configuration>stage</Configuration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
       <Platform>x86</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="stage|x64">
-      <Configuration>stage</Configuration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -50,7 +50,7 @@
     <ConfigurationType>Library</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|ARM64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>Library</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
@@ -58,7 +58,7 @@
     <ConfigurationType>Library</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|ARM'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <ConfigurationType>Library</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
@@ -66,7 +66,7 @@
     <ConfigurationType>Library</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Library</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
@@ -74,21 +74,20 @@
     <TargetName>$(ProjectName)</TargetName>
     <ConfigurationType>Library</ConfigurationType>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x86'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
     <ConfigurationType>Library</ConfigurationType>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ItemDefinitionGroup>
     <GradlePackage>
-      <ProjectDirectory>$(ProjectDir)app</ProjectDirectory>
       <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
       <ApplicationName>com.android_app.app</ApplicationName>
     </GradlePackage>
   </ItemDefinitionGroup>
   <ImportGroup Label="ExtensionSettings" />
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x86'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
@@ -96,7 +95,7 @@
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|ARM64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
@@ -104,7 +103,7 @@
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|ARM'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
@@ -112,7 +111,7 @@
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stage|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)..\..\..\time-android\$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)..\..\..\time-android\intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
@@ -131,6 +130,7 @@
     <JavaCompile Include="app\src\main\java\com\android_app\app.java" />
     <JavaCompile Include="app\src\main\java\com\android_app\impact.java" />
     <JavaCompile Include="app\src\main\java\com\android_app\os.java" />
+    <JavaCompile Include="app\src\main\java\com\android_app\task_scheduler.java" />
   </ItemGroup>
   <Import Project="$(AndroidTargetsPath)\Android.targets" />
   <ImportGroup Label="ExtensionTargets" />

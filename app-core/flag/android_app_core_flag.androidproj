@@ -80,7 +80,6 @@
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ItemDefinitionGroup>
     <GradlePackage>
-      <ProjectDirectory>$(IntermediateDir)app</ProjectDirectory>
       <AndroidAppLibName>$(ProjectName)</AndroidAppLibName>
       <ApplicationName>com.app_core.flag</ApplicationName>
     </GradlePackage>
@@ -163,6 +162,10 @@
   </ItemGroup>
   <ItemGroup>
     <JavaCompile Include="app\src\main\java\com\app_core\flag.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\src\main\java\com\app_core\" />
+    <Folder Include="app\src\main\res\drawable\" />
   </ItemGroup>
   <Import Project="$(AndroidTargetsPath)\Android.targets" />
   <ImportGroup Label="ExtensionTargets" />

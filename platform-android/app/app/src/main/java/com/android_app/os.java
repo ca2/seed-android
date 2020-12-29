@@ -4,6 +4,7 @@ package com.android_app;
 class os 
 {
 
+   String m_strApplicationName;
 
    String m_strApplicationIdentifier;
 
@@ -51,25 +52,29 @@ class os
 
    int m_iEditFocusBottom;
 
-   String m_strEditFocusText;
-
-   int m_iEditFocusSelBeg;
-
-   int m_iEditFocusSelEnd;
-
    boolean m_bEditFocusKill;
 
    boolean m_bRedraw;
 
-   boolean m_bEditorSelection;
+   boolean m_bEditorSelectionUpdated;
 
    int m_iEditorSelectionStart;
 
    int m_iEditorSelectionEnd;
 
-   boolean m_bEditorText;
+   boolean m_bEditorTextUpdated;
 
    String m_strEditorText;
+
+   boolean m_bInputMethodManagerUpdateSelection;
+
+   int m_iInputMethodManagerSelectionStart;
+
+   int m_iInputMethodManagerSelectionEnd;
+
+   int m_iInputMethodManagerCandidateStart;
+
+   int m_iInputMethodManagerCandidateEnd;
 
 }
 
