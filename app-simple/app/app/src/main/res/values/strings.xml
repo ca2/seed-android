@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">Simple App!!</string>
+   <string name="cmd_line">app.exe : app=app-simple/app client_only</string>
+   <string name="lib_name">draw2d_cairo,experience_core,imaging_freeimage</string>
+</resources>

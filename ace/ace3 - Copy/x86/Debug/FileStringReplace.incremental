@@ -1,0 +1,1 @@
+$(GradleVersion)=7.3.3;$(GradlePlugin)=gradle:7.2.0;$(AntDependencies)=;$(ApplicationId)=;$(ConfigurationType)=library;$(AarDependencies)=;$(AarDependenciesSettings)=;$(ApplicationName)=com.ace;$(AndroidAppLibName)=ace;$(AndroidBuildToolsVersion)=30.0.3;$(AndroidAPILevelNumber)=30;$(androidapilevel)=android-30;$(projectname)=android_ace;

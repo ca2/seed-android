@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_simple.app</LaunchActivity>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_simple.app</LaunchActivity>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_simple.app</LaunchActivity>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_simple.app</LaunchActivity>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_simple.app</LaunchActivity>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_simple.app</LaunchActivity>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_simple.app</LaunchActivity>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <LaunchActivity>com.app_core.hellomultiverse</LaunchActivity>
+    <DebuggerType>NativeOnly</DebuggerType>
+  </PropertyGroup>
+</Project>

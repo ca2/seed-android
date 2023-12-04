@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="application_name">Pacman!!</string>
+   <string name="application_identifier">game/pacman</string>
+   <string name="command_line_parameters">client_only</string>
+</resources>

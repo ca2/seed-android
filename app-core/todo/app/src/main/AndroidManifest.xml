@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.app_core"
+          android:versionCode="1"
+          android:versionName="1.0">
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />   
+  <application
+      android:allowBackup="false"
+      android:icon="@drawable/icon"
+      android:label="@string/application_name">
+     <activity android:name="todo"
+               android:configChanges="orientation"
+               android:label="@string/application_name">
+        <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+     <meta-data android:name="application_name" android:value="@string/application_name" />
+     <meta-data android:name="application_identifier" android:value="@string/application_identifier" />
+     <meta-data android:name="command_line_parameters" android:value="@string/command_line_parameters" />
+  </application>
+</manifest>

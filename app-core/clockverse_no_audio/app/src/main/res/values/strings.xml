@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="application_name">Clockverse no-audio!!</string>
+   <string name="application_identifier">app-core/clockverse_no_audio</string>
+   <string name="command_line_parameters">client_only</string>
+</resources>
