@@ -27,5 +27,5 @@ linker
 *.aar
 *.recipe
 _packages.txt
-deployment.rc
+
 
