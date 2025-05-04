@@ -42,7 +42,7 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
 			VALUE "CompanyName", "seed-android"
-			VALUE "FileDescription", "seed_android_app"
+			VALUE "FileDescription", "seed_android_resident"
             VALUE "FileVersion", "2025.0504.1540.01"
             VALUE "LegalCopyright", "Copyright (C) 2025-05-04-15-40-01"
             VALUE "ProductVersion", "2025.0504.1540.01"
